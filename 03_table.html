@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표(Table)관련 태그</title>
+</head>
+
+<body>
+    <h1>표(Table)관련 태그</h1>
+    <hr>
+
+    <h3>Table 태그</h3>
+    <p>웹 문서에서 Table 형태로 자료를 정리하기 위해 사용되는 태그</p>
+    <p>행과 열로 구성되어 있고, 만나는 지점을 셀이라 한다.</p>
+    <p>table 태그 : 테이블을 지칭하는 태그로 가장 밖에 선언된다.</p>
+    <p>tr : 한개의 행(row)을 나타내는 태그</p>
+    <p>td : 한개의 열을 나타는 태그</p>
+
+    <h3>테이블 예시</h3>
+    <table>
+        <tr>
+            <td>홍길동</td>
+            <td>23살</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>31살</td>
+        </tr>
+    </table>
+    <hr><br>
+
+    <h3> border 속성 : 테이블의 테두리의 굵기를 조절해주는 속성</h3>
+    <table border="1px">
+        <tr>
+            <td>최길동</td>
+            <td>23살</td>
+            <td>010-1234-4567</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>42살</td>
+            <td>010-4312-4567</td>
+        </tr>
+    </table>
+    <hr><br>
+
+    <h3> caption 태그 : 테이블의 제목을 지정하는 태그</h3>
+    <table border="1px">
+        <caption>회원 정보</caption>
+        <tr>
+            <td>최길동</td>
+            <td>23살</td>
+            <td>010-1234-4567</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>42살</td>
+            <td>010-4312-4567</td>
+        </tr>
+    </table>
+    <hr><br>
+
+    <h3> th 태그 : 테이블의 제목 셀을 지정하는 태그</h3>
+    <table border="1px">
+        <caption>회원 정보</caption>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td>최길동</td>
+            <td>23살</td>
+            <td>010-1234-4567</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>42살</td>
+            <td>010-4312-4567</td>
+        </tr>
+    </table>
+    <hr><br>
+
+    <h3>colspan : 열 병합 속성</h3>
+    <table border="1px">
+        <tr>
+            <td>안녕</td>
+            <td>하이</td>
+        </tr>
+        <tr>
+            <td colspan="2">안녕하세요?</td>
+        </tr>
+    </table>
+
+    <h3>rowspan : 행 병합 속성</h3>
+    <table border="1px">
+        <tr>
+            <td rowspan="3">안녕</td>
+            <td>하이1</td>
+        </tr>
+        <tr>
+            <td>안녕</td>
+            <td>하이2</td>
+        </tr>
+        <tr>
+            <td>안녕</td>
+            <td>하이3</td>
+        </tr>
+    </table>
+
+    <table border="1px">
+        <tr>
+            <td rowspan="3">안녕</td>
+            <td>하이1</td>
+        </tr>
+        <tr>
+            <td>하이2</td>
+        </tr>
+        <tr>
+            <td>하이3</td>
+        </tr>
+    </table>
+    <hr><br>
+
+    <h3> align 속성 : 테이블 전체를 정렬해주는 속성</h3>
+    <table border="1px" align="center">
+        <tr>
+            <td>최길동</td>
+            <td>23살</td>
+            <td>010-1234-4567</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>42살</td>
+            <td>010-4312-4567</td>
+        </tr>
+    </table>
+
+    <table border="1px" align="right">
+        <tr>
+            <td>최길동</td>
+            <td>23살</td>
+            <td>010-1234-4567</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>42살</td>
+            <td>010-4312-4567</td>
+        </tr>
+    </table>
+    <br><br><br>
+    <hr><br>
+
+    <h3>style : css 속성(스타일)을 걸수 있는 속성</h3>
+    <p> width : 너비</p>
+    <p> heigth : 높이</p>
+    <p> text-align : 텍스트 내용의 정렬</p>
+    <p> border : 테두리 굵기</p>
+    <br><br>
+
+    <table border="1px" style="width:400px; height:100px; text-align: center; border: black solid 1px">
+        <tr>
+            <td>최길동</td>
+            <td>23살</td>
+            <td>010-1234-4567</td>
+        </tr>
+        <tr>
+            <td>김길동</td>
+            <td>42살</td>
+            <td>010-4312-4567</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>21살</td>
+            <td>010-4312-4567</td>
+        </tr>
+    </table>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
