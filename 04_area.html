@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역관련 태그</title>
+</head>
+
+<body>
+    <h1>영역관련 태그</h1>
+    <hr>
+
+    <h3>div 태그 ★★★★★</h3>
+    <p>HTML문서에서 부분 또는 색션을 정의하기 위한 블록요소로 활용됨</p>
+    <p>주로 다른 태그를 감싸는 컨테이너(요소안에 요소가 있는 형태)로 활용됨</p>
+    <p>블록 태그로써 감싸면 한줄이 자동으로 띄어지는 효과가 있음. (newline / br)</p>
+    <p>주로 CSS나 JavaScript에서 조작하는 객체로도 활용됨</p>
+    <hr><br>
+
+    <h3>div 실습</h3>
+    <div>div 영역 1입니다.</div>
+    <div>div 영역 2입니다.</div>
+    <hr><br>
+
+    <h3>div 영역지정 1</h3>
+    <div style="border: black 1px solid">블록 영역입니다.</div>
+    <hr><br>
+
+    <h3>div 영역지정 2 : 높이, 너비 지정하기</h3>
+    <div style="border: black 1px solid; width:300px; height:100px;">블록 영역입니다.</div>
+    <hr><br>
+
+    <h3>div 영역지정 3 : 정렬기능 활용하기</h3>
+    <div style="border: black 1px solid; width:300px; height:100px; text-align: right;">
+        오른쪽 정렬
+    </div>
+    <div style="border: black 1px solid; width:300px; height:100px; text-align: center;">
+        가운데 정렬
+    </div>
+    <div style="border: black 1px solid; width:300px; height:100px; text-align: left; ">
+        왼쪽 정렬
+    </div>
+    <hr><br>
+
+    <h3>div 영역지정 4 : 색상 지정하기</h3>
+    <div style="border: black 1px solid; background-color:aquamarine; color:coral; width:300px; height:100px;">
+        배경색은 aquamarine이고,<br> 글자색은 coral입니다.
+    </div>
+    <hr><br>
+
+    <h3>span 태그 ★★★★★</h3>
+    <p>문서의 인라인 요소를 그룹화 하는데 사용</p>
+    <p>span으로 감싼 영역은 줄바꿈되지 않고 가로로 나열 시킬수 있다.</p>
+    <hr><br>
+
+    <h3>span 예시</h3>
+    <span>스팬 영역입니다.</span> 이곳은 일반 영역입니다.
+    <hr><br>
+
+    <h3>span 영역지정 1</h3>
+    <span style="border: 1px solid;">스팬은 인라인 요소입니다.</span> 이곳은 일반 영역입니다.<br>
+    <span style="color:brown">일반 컨텐츠에서 분리된 영역을 만들수 있습니다.</span> 이곳은 일반 영역입니다.
+    <hr><br>
+
+    <h3>span 영역지정 2 : 높이/너비 지정 - ※ 그냥은 안된다!</h3>
+    <span style="border: 1px solid; width: 100px; height:100px;">
+        스팬은 인라인 요소입니다.
+    </span> 이곳은 일반 영역입니다.<br>
+    <hr><br>
+
+    <h3>span 영역지정 3 : 높이/너비 지정 - 되는 솔루션</h3>
+    <p>display:inline-block 속성을 추가하여 inline요소를 block으로 변경해야 너비/높이 지정 가능!</p>
+    <span style="border: 1px solid; width: 200px; height:100px; display:inline-block">
+        스팬은 인라인 요소이지만, 블록으로 전환된 영역입니다!
+    </span> 이곳은 일반 영역입니다.<br>
+    <hr><br>
+
+
+</body>
+
+</html>
