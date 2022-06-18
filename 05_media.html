@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어 관련 태그</title>
+</head>
+
+<body>
+    <h1>멀티미디어 관련 태그</h1>
+    <hr>
+
+    <h3>이미지 태그 (img)</h3>
+    <p> - 웹페이지에서 사진이나 이미지를 삽입할때 사용하는 태그</p>
+    <p> - 링크를 통해 이미지파일을 별도로 가져와서 표시하는 기능</p>
+    <br>
+
+    <h3>이미지 첨부 1 : 다른 사이트의 이미지 가져오기</h3>
+    <img src="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+    <br>
+
+    <h3>이미지 첨부 2 : 내부 파일을 가져오는 법 ※html의 상대 경로로 지정되여야함</h3>
+    <!--이게 정석-->
+    <p>상대 경로로 가져오는 법</p>
+    <img src="resources/image/kh_logo.jpg">
+    <!-- <img src="./resources/image/kh_logo.jpg"> -->
+    <br>
+    <p style="color:red;">절대 경로로 가져오는 법 -> 절대 쓰지 말것!</p>
+    <img src="C:\dev_source\work_space_html_325AM\resources\image\kh_logo.jpg">
+    <br>
+
+    <h3>이미지 첨부 3 : alt를 통해 이미지가 안보일때 설명 써보기</h3>
+    <img src="잘못된 경로를 지정"><br>
+    <img src="잘못된 경로를 지정" alt="경로가 잘못되었습니다.">
+    <br>
+
+    <h3>이미지 첨부 4 : 이미지 크기 지정</h3>
+    <img src="resources/image/flower5.PNG" width="200px" height="200px">
+    <br>
+    <img src="resources/image/flower5.PNG" width="200px">
+    <br>
+    <img src="resources/image/flower5.PNG" width="40%">
+    <hr><br>
+
+    <h3>map 태그</h3>
+    <p>- 이미지 구역을 분리하여 링크를 걸어주는 태그</p>
+    <p> map : 이미지 구역을 생성하는 태그</p>
+    <p> area : map 내부에서 이미지 구역을 지정해주는 태그</p>
+
+    <img src="resources/image/flower3.PNG" width="400px" height="400px" usemap="#maptest">
+    <map name="maptest">
+        <area shape="rect" coords="0,0,200,200" href="http://www.naver.com" alt="네이버">
+        <area shape="rect" coords="200,200,400,400" href="http://www.google.com" >
+    </map>
+    <hr><br>
+
+    <h3>오디오 태그 (audio)</h3>
+    <p> - 웹 브라우저에서 플러그인의 도움 없이 음악을 재생시키는 태그</p>
+    <audio src="resources/audio/NonJeNeRegretteRien.mp3" controls autoplay loop>
+        웹브라우저에서 audio 태그가 없을때 표시하는 컨텐츠(글씨/이미지)
+    </audio>
+    <hr><br>
+
+    <h3>비디오 태그(video)</h3>
+    <p> - 웹 브라우저에서 플러그인 없이 미디어를 재생시키는 태그</p>
+    <h3>동영상 재생 : 컨트롤 표시 (controls)</h3>
+    <video src="resources/video/video1.mp4" controls>
+        웹브라우저가 지원하지 않을때 표시되는 문구
+    </video>
+
+    <h3>동영상 재생 : 재생 전 출력할 이미지 지정(poster), 크기지정(width/height)</h3>
+    <video src="resources/video/video1.mp4" controls poster="resources/image/flower2.PNG" width="300px">
+            영상을 지원하지 않습니다.
+    </video>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

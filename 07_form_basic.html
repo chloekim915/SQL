@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 폼 관련 태그</title>
+</head>
+
+<body>
+    <h1>Form 관련 태그</h1>
+    <p> - 사용자로부터 Text 및 각종 입력을 전달 받아 page가 지정한 서버로 전송하는 기능</p>
+    <p> - 주요한 form : text, pw, textarea, button, summit, radio, select 등 존재</p>
+    <hr>
+
+    <h3>form 기초 예제</h3>
+    <p> action : 전달된 서버의 url</p>
+    <p> method : 전달 방식 선택할수 있음, get은 url을 통한 노출, post는 url과 별도로 데이터 전달</p>
+
+    <form action="05_media.html" method="get">
+        <div>
+            <label for="userID">아이디</label>
+            <input type="text" name="userID" id="userID">
+        </div>
+        <div>
+            <label for="password">비밀번호</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div>
+            <label for="userName">이름</label>
+            <input type="text" name="userName" id="userName">
+        </div>
+        <div>
+            <label for="userAge">나이</label>
+            <input type="number" name="userAge" id="userAge">
+        </div>
+        <div>
+            <input type="submit" value="제출">
+        </div>
+    </form>
+    <hr><br>
+    <!-- 05_media.html?userID=test&password=1234&userName=%ED%99%8D%EA%B8%B8%EB%8F%99&userAge=30 -->
+    <!-- 한글은 자동으로 인코딩 되어 전송됨-->
+
+    <h3>form 관련 복합예제</h3>
+    <form action="05_media.html" method="get">
+        <fieldset>
+            <legend>회원 정보</legend>
+            <div>
+                <label for="userID">아이디</label>
+                <input type="text" name="userID" id="userID2" value="test" required readonly>
+            </div>
+            <div>
+                <label for="password">패스워드</label>
+                <input type="password" name="password" id="password2" required minlength="4" maxlength="10">
+            </div>
+            <div>
+                <label for="userName">이름</label>
+                <input type="text" name="userName" id="userName2" required>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>기타 정보</legend>
+            <div>
+                <label for="email">e-mail</label>
+                <input type="email" name="email" id="email" placeholder="test@email.com">
+            </div>
+            <div>
+                <label for="homepage">홈페이지</label>
+                <input type="url" name="homepage" id="homepage" placeholder="http://www.myhome.com">
+            </div>
+            <div>
+                <label for="phone">전화번호</label>
+                <input type="tel" name="phone" id="phone" placeholder="010-1234-4556">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>자기 소개</legend>
+            <textarea name="selfInfo" id="selfInfo" cols="80" rows="10" style="resize: none;"></textarea>
+        </fieldset>
+        <input type="reset" value="리셋"><br>
+        <button type="submit"> 제출 </button>
+    </form>
+    <hr><br>
+
+    <h3>Button 관련 태그</h3>
+    <h3>1) Input 태그</h3>
+    <p> - css 적용이 어려워 잘 사용하지 않음</p>
+    <input type="submit" value="제출"><br>
+    <input type="reset" value="초기화"><br>
+    <input type="button" value="버튼"><br><br>
+
+    <h3>2) button 태그</h3>
+    <p> - 버튼은 버튼 태그를 추천</p>
+    <button type="submit">제출</button><br>
+    <button type="reset">리셋</button><br>
+    <button type="button">버튼</button><br>
+    <button type="button"><img src="resources/image/flower3.PNG" width="100px"></button><br>
+    <hr><br>
+
+    <h3>숫자 관련 태그</h3>
+    <form action="05_media.html" method="get">
+        <fieldset>
+            <legend>숫자 태그</legend>
+            <div>
+                <input type="number" name="point" id="point" max="100" min="0">
+            </div>
+            <div>
+                <input type="range" name="point2" id="point2" max="100" min="0">
+            </div>
+        </fieldset>
+        <button type="submit">제출</button>
+    </form>
+
+    <h3>날짜/시간 관련 태그</h3>
+    <form action="05_media.html" method="get">
+        <fieldset>
+            <legend>날짜 / 시간</legend>
+            <div>
+                <label for="birthday">생일</label>
+                <input type="date" name="birthday" id="birthday" value="2000-10-10">
+            </div>
+            <div>
+                <label for="reserve">시간 예약</label>
+                <input type="time" name="reserve" id="reserve" value="14:20">
+            </div>
+            <div>
+                <label for="reserve2">일자 + 시간 예약</label>
+                <input type="datetime-local" name="reserve2" id="reserve2" value="2022-06-10T18:30">
+                <!-- 날짜/시간 표준 포맷 iso-8601 yyyy-mm-ddThh:mi -->
+            </div>
+        </fieldset>
+        <button type="submit">제출</button>
+    </form>
+
+    <h3>선택 관련 태그</h3>
+    <form action="05_media.html" method="get">
+        <fieldset>
+            <legend>라디오</legend>
+            <input type="radio" name="gender" id="gender-male" value="m" checked>
+            <label for="gender-male">남</label>
+            <input type="radio" name="gender" id="gender-female" value="f">
+            <label for="gender-female">여</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>체크박스</legend>
+            <!--여러개의 체크박스 만들때, name이 통일 되어야하고 value가 각자의 값이 됨-->
+            <input type="checkbox" name="hobby" id="music" value="music" checked>
+            <label for="music">음악감상</label>
+            <input type="checkbox" name="hobby" id="game" value="game">
+            <label for="game">게임</label>
+            <input type="checkbox" name="hobby" id="fitness" value="fitness">
+            <label for="fitness">헬스</label>
+            <input type="checkbox" name="hobby" id="book" value="book">
+            <label for="book">독서</label>
+            <br>
+
+            <!-- 단일 체크박스 만들때, name하나로 수신 여부 확인이 가능-->
+            <label for="mailck">메일 수신</label>
+            <input type="checkbox" name="mailck" id="mailck">
+        </fieldset>
+
+        <fieldset>
+            <legend>Select</legend>
+            <label for="nation">국적 : </label>
+            <select name="nation" id="nation">
+                <optgroup label="America">
+                    <option value="us" >미국</option>
+                </optgroup>
+                <optgroup label="Asia">
+                    <option value="ko" selected>한국</option>
+                    <option value="ja" >일본</option>
+                    <option value="ch" >중국</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>datalist</legend>
+            <label for="menu">과일 선택</label>
+            <input type="text" name="menu" id="menu" list="menu-list">
+            <datalist id="menu-list">
+                <option value="사과">사과</option>
+                <option value="바나나">바나나</option>
+                <option value="파인애플">파인애플</option>
+            </datalist>
+        </fieldset>
+
+        <button type="submit">제출</button>
+    </form>
+    <hr><br>
+    <!--?gender=m&hobby=music&nation=ch&menu=%ED%8C%8C%EC%9D%B8%EC%95%A0%ED%94%8C-->
+    <!--?gender=m&hobby=music&hobby=game&hobby=fitness&mailck=on&nation=ko&menu=%ED%8C%8C%EC%9D%B8%EC%95%A0%ED%94%8C -->
+
+    <h3>기타</h3>
+    <form action="">
+        <fieldset>
+            <legend>기타</legend>
+            <label for="userColor">컬러 : </label>
+            <!-- input:color#userColor -->
+            <input type="color" name="userColor" id="userColor" value="#00ff62">
+
+            <br>
+            <label for="upFile">파일업로드 : </label>
+            <!-- input:file#upFile[name=upFile] -->
+            <input type="file" name="upFile" id="upFile">
+
+            <br>
+            <input type="hidden" name="notVisible" value="저는 안보이지만,전송은 됩니다.">
+            <input type="text" name="userId" id="userId" value="honggd" disabled>
+        </fieldset>
+        <input type="submit" value="전송">
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
