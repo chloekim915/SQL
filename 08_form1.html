@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>품 관련 태그</title>
+</head>
+
+<body>
+    <h1>폼 관련 태그</h1>
+    <hr>
+    <h3>Form 태그</h3>
+    <p>- 사용자가 입력한 값에 대한 처리 방식과 실제 처리해야할 서버의 url을 명시하는 태그</p>
+    <p>- action : 실제 서버가 처리해야할 url/주소 정보를 기입</p>
+    <p>- method : get/post를 통해 서버로 전달할 방식을 기입 (default : get)</p>
+    <p>- submit : form 입력된 데이터를 서버로 전송하는 기능으로 버튼으로 활용</p>
+    <form name="form1" id="form1" action="05_media.html" method="get">
+        input요소들이 써지는 곳. <br>
+        <input type="text" name="id" id="id"><br>
+        <input type="password" name="pw" id="pw"><br>
+        <input type="submit" value="제출">
+    </form>
+    <hr><br>
+
+    <h3>fieldset, legend 태그 (잘 사용되지 않는다..)</h3>
+    <p> fieldset : 폼요소를 그룹으로 묶어주는 태그</p>
+    <p> legend : 폼요소의 그룹의 명칭을 붙여주는 태그</p>
+
+    <form name="form1" id="form1" action="05_media.html" method="get">
+        <fieldset>
+            <legend>로그인</legend>
+            <input type="text" name="id" id="id"><br>
+            <input type="password" name="pw" id="pw"><br>
+            <input type="submit" value="제출">
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>

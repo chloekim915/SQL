@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 입력 양식 요소2</title>
+</head>
+
+<body>
+    <h1>폼 입력 양식 요소2</h1>
+    <hr>
+
+    <h3>label 태그</h3>
+    <p> - 입력 값이 무엇인지 설명하고, click 시 id와 매칭하는 기능</p>
+    <label for="id">아이디 : </label> <input type="text" name="id" id="id">
+    <label for="pw">비번 : </label> <input type="password" name="pw" id="pw">
+    <hr><br>
+
+    <h3>여러값을 표현하는 태그</h3>
+    <h4>select 태그</h4>
+    <p> - 드롭다운으로 목록을 선택하도록 유도하는 태그</p>
+    <h4>option 태그</h4>
+    <p> - select 태그에 종속되어 옵션을 값을 지정해주는 태그</p>
+    <h4>optgroup 태그</h4>
+    <p> - option값을 그룹할때 사용하는 태그로 선택되지 않음!</p>
+
+    <h4>1. 기본적인 select 활용</h4>
+    <select name="lang" id="lang">
+        <option value="java">자바</option>
+        <option value="sql">SQL</option>
+        <option value="html" selected>HTML</option>
+    </select>
+    <br>
+
+    <h4>2. size를 활용하여 화면에 보여줄 항목의 개수를 지정</h4>
+    <select name="lang" id="lang" size="2">
+        <option value="java">자바</option>
+        <option value="sql">SQL</option>
+        <option value="html" selected>HTML</option>
+    </select>
+    <br>
+
+    <h4>3. multiple : 여러 항목을 지정 가능한 옵션, ctrl을 누른채 활용해야함 -> 어렵다..</h4>
+    <select name="lang" id="lang" size="2" multiple>
+        <option value="java">자바</option>
+        <option value="sql">SQL</option>
+        <option value="html" selected>HTML</option>
+    </select>
+    <br>
+
+    <h4>4. optgroup을 활용하여 그룹핑하는 방법</h4>
+    <select name="lang" id="lang">
+        <optgroup label="Backend">
+            <option value="java">자바</option>
+            <option value="sql">SQL</option>
+            <option value="spring">스프링</option>
+        </optgroup>
+        <optgroup label="Frontend">
+            <option value="html" selected>HTML</option>
+            <option value="css" selected>css</option>
+            <option value="javascript" selected>javascript</option>
+        </optgroup>
+        
+    </select>
+    <hr><br>
+
+    <h3>datalist 태그</h3>
+    <p> - input 태그의 리스트 형식을 제공하여 옵션을 자동을 입력하는 기능 (절대적이지 않음!!)</p>
+    <input type="text" name="dlist2" list="dlist1">
+    <datalist id="dlist1">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">자바스크립트</option>
+    </datalist>
+
+    <h3>textarea 태그 </h3>
+    <p> - 여러줄을 입력받을때 사용하는 태그, cols:줄의 길이, rows : 행의 길이를 표기 해야함</p>
+    <p> - 태그 시작과 끝 사이 공간이 실제 컨텐츠가 됨으로 공백 유지 필수! </p>
+    <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력하시오." required>
+    </textarea>
+    <hr><br>
+
+    <h3>기타 태그들</h3>
+
+    <h4>prograss 태그</h4>
+    <p> - 작업 진행 상태를 나타내는 태그</p>
+    <progress max="100" value="45"></progress>
+    <br>
+
+    <h4>meter 태그</h4>
+    <p> - 값이 차지하는 크기(게이지) 표시 ex) 디스크 사용량 등...</p>
+    <meter min="0" max="10" value="5"></meter>
+    <meter min="0" max="10" low="3" high="7" value="5"></meter>
+    <meter min="0" max="10" low="3" high="7" value="1"></meter>
+    <meter min="0" max="10" low="3" high="7" value="8"></meter>
+
+    <h4>button 태그</h4>
+    <p> - summit Type 대신 사용되는 태그, css 활용하기 좋음으로 자주 사용됨</p>
+    <form action="#">
+        <input type="text" name="u_id" placeholder="아이디">
+        <input type="password" name="u_pass" placeholder="비밀번호">
+        <button type="submit">로그인</button>
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

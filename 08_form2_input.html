@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 입력 양식 요소</title>
+</head>
+
+<body>
+    <h1>폼 입력 양식 요소</h1>
+    <hr>
+
+    <h3>input 태그</h3>
+    <p> - 사용자의 입력을 위한 다양한 type을 갖는 입력 필드를 생성</p>
+    <br>
+
+    <h3>기본 Type 속성</h3>
+    <h4>text type 속성</h4>
+    <p> - 한줄짜리 입력창이 생기는 속성, 가장 기본적인 필드</p>
+    <p> - name : 서버에서 클라이언트의 요청 파라메터(데이터)로 인지 할 이름</p>
+    <p> - id : 클라이언트 페이지에서 태그를 인지할 id, 주로 javascript나 css 식별자로 사용됨</p>
+    이름 : <input type="text" name="name" id="name">
+    <br> 전화번호 : <input type="tel" name="tel" id="tel" value="010-" size="13" maxlength="13"><br>
+    <hr>
+
+    <h4>submit / reset type</h4>
+    <p> submit : 입력한 데이터를 서버 페이지로 전송하는 기능, 버튼 외에 javascript에서도 가능하다.</p>
+    <p> reset : 입력한 데이터를 초기화 하는 기능, form단위로 리셋됨</p>
+    <form method="GET" action="06_link.html">
+        아이디 : <input type="text" name="u_id">
+        <br> 비밀번호 : <input type="text" name="u_pass">
+        <br>
+        <input type="submit" value="로그인">
+        <input type="reset" value="다시입력">
+    </form>
+    <hr>
+
+    <h4>password type 속성</h4>
+    <p> - 비밀번호 입력시 창에 ***으로 표시되고, 페이지가 벗어난 경우 자동으로 지워짐 (보완 강화!)</p>
+    <form method="GET" action="06_link.html">
+        아이디 : <input type="text" name="u_id">
+        <br> 비밀번호 : <input type="password" name="u_pass"><br>
+        <input type="hidden" name="secretData" value="201720214">
+        <input type="submit" value="로그인">
+    </form>
+    <hr>
+
+    <h4>hidden type 속성</h4>
+    <p>- 사용자에게 보여지지 않고 client 전달되었다가 다시 서버쪽으로 전달될수 있는 필드</p>
+    <p>- 주로 개발자 편의 요소로 활용되나 가끔 보안의 헛점이 될수 있음으로 주의 요구!</p>
+    <input type="hidden" name="secretData" value="201720214">
+    <hr>
+
+    <h4>checkbox type 속성</h4>
+    <p> - name을 동일한 그룹으로 설정하고, 다중 선택이 가능한 속성</p>
+    <p> - 향후 서버 사이드에서 제일 다루기 귀찮은 속성 -> 다르게 설계하는 것을 추천</p>
+    <input type="checkbox" name="check1" value="java">자바
+    <input type="checkbox" name="check1" value="oracle">오라클
+    <input type="checkbox" name="check1" value="html" checked>HTML
+    <hr>
+
+    <h4>radio type 속성</h4>
+    <p> - name을 동일한 그룹으로 설정하고, 단일 선택만 가능한 속성</p>
+    <input type="radio" name="check2" value="java">자바
+    <input type="radio" name="check2" value="oracle">오라클
+    <input type="radio" name="check2" value="html" checked>HTML
+    <hr>
+
+    <h4>file type 속성</h4>
+    <p> - 파일을 전송하기 위한 속성, 단일이나 다중 선택이 가능하다. -> 대부분 단일 처리를 추천</p>
+    <input type="file" name="upfile1" id="upfile1">
+    <input type="file" name="upfile2" id="upfile2" multiple>
+    <hr>
+
+    <h4>image type 속성</h4>
+    <p> - 사실상 이미지 버튼용도로 활용되는 기능</p>
+    <input type="image" src="resources/image/kh_logo.jpg" onclick="javascript:alert('hello!');">
+    <hr>
+
+    <h4>button type 속성</h4>
+    <p> - 버튼 기능으로 활용, submit나 onclick 이벤트를 받아 처리 가능</p>
+    <input type="button" value="확인" onclick="javascript:alert('hello!');">
+    <hr><br>
+
+    <h3>type HTML5 양식 태그</h3>
+    <p> - HTML5로 와서 적용된 태그로 IE나 올드한 version에서는 적용되지 않음</p>
+    <p> - HTML5의 표준을 잘 지키는 크롬계열의 브라우저(크롬, 웨일, 사파리, 엣지)에서는 사용 가능</p>
+
+    <h3>날짜 관련 type 속성</h3>
+    <h4>date type 속성</h4>
+    <p>년,월,일 선택 가능한 양식 제공</p>
+    <input type="date" name="date1"><br>
+    <input type="date" name="date2" min="2022-01-01" max="2022-12-30" value="2022-06-20"><br>
+    <br>
+
+    <h4>datetime-local type 속성</h4>
+    <p>년,월,일,시간 선택 가능한 양식 제공</p>
+    <input type="datetime-local" name="date3"><br>
+    <br>
+
+    <h4>month type 속성</h4>
+    <p>년,월 선택 가능한 양식 제공</p>
+    <input type="month" name="date4"><br>
+    <br>
+
+    <h4>week type 속성</h4>
+    <p>주 선택 가능한 양식 제공</p>
+    <input type="week" name="date5"><br>
+    <br>
+
+    <h4>time type 속성</h4>
+    <p>시간 선택 가능한 양식 제공</p>
+    <input type="time" name="date6"><br>
+    <hr><br>
+
+    <h3>기타 type 속성</h3>
+    <h4>color type 속성</h4>
+    <input type="color" name="color1">
+    <input type="color" name="color2" value="#ff0000">
+
+    <h4>number type 속성</h4>
+    숫자 입력 양식
+    <input type="number" name="num" min="0" max="150">
+
+    <h4>range type 속성</h4>
+    슬라이드 막대로 숫자 지정 양식
+    <input type="range" name="range" min="0" max="150">
+
+    <h4>search type 속성</h4>
+    검색어 입력 양식(입력 후 x버튼 생김)
+    <input type="search" name="search">
+
+    <h4>email type 속성</h4>
+    데이터 전송 시 @를 확인하는 입력 양식
+    <form action="#">
+        <input type="email" name="mail">
+        <input type="submit" value="전송">
+    </form>
+
+    <h4>url type 속성</h4>
+    데이터 전송 시 주소인지(http://)를 확인하는 입력 양식
+    <form action="#">
+        <input type="url" name="url">
+        <input type="submit" value="전송">
+    </form>
+    <hr><br>
+
+    <h3>그외 input 태그의 속성</h3>
+    <h4>placeholder 속성</h4>
+    <p> - 사용자의 입력창에 hint(뒤에 회색 글씨)로 표시하는 기능</p>
+    <input type="text" placeholder="아이디를 입력하세요.">
+
+    <h4>readonly 속성</h4>
+    <p> - 읽기전용으로 사용자가 값을 변경할 수 없음</p>
+    <input type="text" value="변경 불가한 값" readonly>
+
+    <h4>required 속성</h4>
+    <p> - submit시 필수 입력값으로 지정하여 브라우저에서 체크하는 항목</p>
+    <form action="#">
+        아이디 : <input type="text" name="u_id" required>
+        <br> 비밀번호 : <input type="password" name="u_pass" required>
+        <input type="submit" value="로그인">
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
