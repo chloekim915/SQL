@@ -1,0 +1,17 @@
+/* id 선택자 = '#'*/
+
+#id3 {
+    color: aqua;
+    background: brown;
+}
+
+
+/* class 선택자 = '.' */
+
+.class2,
+.class3 {
+    color: deeppink;
+    background-color: forestgreen;
+    font-size: xx-large;
+    text-align: center;
+}

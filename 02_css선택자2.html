@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 2</title>
+</head>
+
+<body>
+    <h3>기본 속성 선택자 (이름으로 할당)</h3>
+    <p> - 기본선택자 뒤에[](대괄호)를 사용하요 속성과 속성 값을 사용하여 선택하는 기법</p>
+    <pre>선택자[속성=속성값]{CSS 설정 내용; }</pre>
+    <style>
+        div[name=name2] {
+            color: indigo;
+            background-color: khaki;
+        }
+    </style>
+    <div name="name1"> div name1 영역</div>
+    <div name="name2"> div name2 영역</div>
+    <p name="name2">p name2 영역</p>
+    <!--div-name1과 p는 먹히지 않음.-->
+    <hr><br>
+
+    <h3>후손/자식 선택자</h3>
+    <p>후손 선택자 : 조상 하위의 모든 요소 </p>
+    <p>자식 선택자 : 부모 하위의 단일 하위 요소 단, '>'가 포함되어야함</p>
+    <style>
+        #test1 h4 {
+            background-color: rgb(0, 146, 203);
+            color: rgb(151, 30, 30)
+        }
+        
+        #test1>h4 {
+            background-color: lawngreen;
+            color: gray
+        }
+        
+        #test1>#test2>p {
+            background-color: rgb(190, 92, 0);
+            color: rgb(163, 163, 163)
+        }
+        
+        .class1 .class2 {
+            background-color: rgb(197, 245, 235);
+            color: rgb(161, 63, 107)
+        }
+    </style>
+
+    <div id="test1">
+        <h4>자손 영역1</h4>
+        <h4>자손 영역2</h4>
+        <h3>아무것도 아닌 영역</h3>
+        <div id="test2">
+            <h4>자손 영역3</h4>
+            <!--후손 영역-->
+            <h3>아무것도 아닌 영역</h3>
+            <p>자손의 자손의 P 영역</p>
+            <div>아무것도 아닌 영역</div>
+        </div>
+        <p>자손의 P 영역</p>
+    </div>
+    <hr><br>
+
+    <div class="class1">
+        class1 영역입니다.
+        <div class="class2"> class1 - class2 영역입니다.</div>
+        <div> 일반 div 영역입니다.</div>
+    </div>
+    <div class="class2"> class2 영역입니다.</div>
+    <hr><br>
+
+    <h3>동위 선택자</h3>
+    <p>동위 관계에서 뒤에 위치한 태그를 선택</p>
+    <pre>바로 뒤의 요소 선택 : 선택자a + 선택자b { 설정내용; }</pre>
+    <pre>뒤에 있는 모든 요소 선택 : 선택자a ~ 선택자b { 설정내용; }</pre>
+    <style>
+        #div-test1+div {
+            background-color: purple;
+        }
+        /* #div-test3~div {
+            background-color: blue;
+        } */
+        
+        #div-test1+div+div {
+            background-color: yellow;
+        }
+    </style>
+
+    <div id="div-test1">div test1</div>
+    <div id="div-test2">div test2</div>
+    <div id="div-test3">div test3</div>
+    <div id="div-test4">div test4</div>
+    <div id="div-test5">div test5</div>
+    <div id="div-test6">div test6</div>
+    <hr><br>
+
+    <h3>반응 선택자</h3>
+    <p> - 사용자의 움직임에 따라 발생한 이벤트에 반응하는 선택자</p>
+    <p> - active : 사용자가 특정 태그를 클릭하였을때 발생</p>
+    <p> - hover : 마우스 특정 태그의 떠 있는 경우</p>
+
+    <style>
+        #active-test,
+        #hover-test {
+            background-color: lavender;
+            width: 300px;
+            height: 100px;
+        }
+        
+        #active-test:active {
+            /* active 상태 정의 */
+            background-color: yellow;
+        }
+        
+        #hover-test:hover {
+            /* hover 상태 정의 */
+            background-color: green;
+            width: 320px;
+            height: 110px;
+            transition: all 500ms;
+        }
+    </style>
+
+    <div id="active-test">active 테스트</div>
+    <div id="hover-test">hover 테스트</div>
+    <hr><br>
+
+
+    <h3>상태 선택자</h3>
+    <p>- 입력양식의 상태에 따라 변하는 선택자</p>
+    <div>체크 상태의 input 태그 선택 - input태그:checked { 설정내용; }</div>
+
+    <style>
+        /* 속성 선택자 ver. */
+        
+        input[type='checkbox']:checked {
+            width: 50px;
+            height: 50px;
+            transition: 100ms all;
+        }
+        
+        #u_id:focus,
+        #u_pw:focus {
+            background-color: rgb(0, 255, 64);
+            transition: 100ms all;
+        }
+        
+        .userInputClass:focus {
+            background-color: rgb(111, 103, 146);
+            transition: 100ms all;
+        }
+        
+        option:disabled {
+            background-color: black;
+            color: white;
+            transition: 100ms all;
+        }
+        
+        option:enabled {
+            background-color: yellow;
+            transition: 100ms all;
+        }
+    </style>
+
+    <h4>checkbox</h4>
+    <input type="checkbox" id="apple" name="fruits" value="사과">사과
+    <input type="checkbox" id="banana" name="fruits" value="바나나">바나나
+    <input type="checkbox" id="orange" name="fruits" value="오렌지">오렌지
+    <br>
+
+    <h4>input text</h4>
+    아이디 : <input type="text" id="u_id">
+    <br>비밀번호 : <input type="text" id="u_pw">
+    <br>이름 : <input type="text" class="userInputClass">
+    <br>
+
+    <h4>select</h4>
+    <select>
+        <option value="10">10대</option>
+        <option value="20">20대</option>
+        <option value="30">30대</option>
+        <option value="40" disabled>40대</option>
+    </select>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

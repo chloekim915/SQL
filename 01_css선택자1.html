@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+</head>
+
+<body>
+    <h1>CSS 선택자란?</h1>
+    <p>특정한 HTML 태그를 선택하여 스타일을 부여할때 사용되는 식별자(태그, #ID, .Class, 부모/후손, 이벤트 등)</p>
+    <hr>
+
+    <h3>1. 모든 선택자</h3>
+    <p> - HTML 문서 안에 모든 태그를 선택하는 기능</p>
+    <style>
+        * {
+            font-family: sans-serif;
+            /* color: red;
+            font-weight: bold; */
+        }
+    </style>
+    <hr><br>
+
+    <h3>2. 태그 선택자</h3>
+    <p> - 특정 태그를 모두 CSS로 적용하는 방법</p>
+    <style>
+        ul {
+            color: pink;
+            font-weight: bold;
+        }
+    </style>
+    <ul>ul 태그의 전체가 변경됨</ul>
+    <li>다른 태그는 변경되지 않음!</li>
+    <hr><br>
+
+    <h3>3. 아이디 선택자★★★</h3>
+    <p> - HTML 태그의 속성값에 ID를 지정하여 적용하는 방법</p>
+    <p> - id와 style이 1:1 매핑되는 방법으로 많이 사용됨</p>
+    <style>
+        #id1 {
+            color: seagreen;
+            background-color: thistle;
+            font-size: larger;
+        }
+        
+        #id2 {
+            color: darkkhaki;
+            background-color: rgb(165, 37, 165);
+            font-size: xx-large;
+        }
+    </style>
+    <div id="id1">id1 영역입니다.</div>
+    <div id="id2">id2 영역입니다.</div>
+    <hr><br>
+
+    <h3>4. 클래스 선택자★★★★★ </h3>
+    <p> - HTML 태그의 속성을 class(그룹)로 지정하여 스타일 적용하는 방법</p>
+    <p> - calss와 style 1:N 매핑되는 방법이고, 1:1 매핑 가능. css 적용시 가장 많이 활용되는 기법</p>
+    <style>
+        .class1 {
+            color: rgb(64, 64, 139);
+            background-color: gold;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        .class2,
+        .class3 {
+            /* class2와 class3을 같은 css 값으로 설정하는 방법 */
+            color: rgb(214, 189, 207);
+            background-color: rgb(14, 145, 49);
+            font-size: 14px;
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .classP .classC {
+            /* classP는 부모, classC는 자손일때 활용하는 기법, 조상-후손 */
+            color: rgb(227, 224, 54);
+            background-color: rgb(35, 13, 4);
+            font-size: 16px;
+        }
+    </style>
+
+    <div class="class1">class1 영역입니다.</div>
+    <div class="class2">class2 영역입니다.</div>
+    <div class="class3">class3 영역입니다.</div>
+
+    <div class="class1">두번째 class1 영역입니다.</div>
+    <div class="class2">두번째 class2 영역입니다.</div>
+    <div class="class3">두번째 class3 영역입니다.</div>
+    <br>
+    <div class="classP">
+        부모영역입니다.
+        <div class="classC">자식1의 영역입니다. classC 영역입니다.</div>
+        <div>자식2의 영역입니다.</div>
+    </div>
+    <div class="classC">classC 영역입니다. 이곳은 안먹힐 예정</div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

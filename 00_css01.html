@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="00_css00.css">
+    <title>CSS 기초</title>
+</head>
+
+<body>
+    <h1>CSS (Cascading Style Sheet)</h1>
+    <div>HTML 문서의 스타일을 정의하는 언어, TAG의 스타일(폰트, 크기, 위치 등)을 지정하는 문법 제공</div>
+    <div>또한 영역을 지정하고 화면/프레임 분할을 위해 사용되기도 함</div>
+    <hr><br>
+
+    <h3>CSS 사용법 1. 인라인 스타일</h3>
+    <p> 각 태그 속성안에 'style' 속성값을 선언하여 인라인으로 스타일을 지정하는 방법</p>
+    <div style="color:red; background-color:aliceblue;">인라인 지정 영역</div>
+    <hr><br>
+
+    <h3>CSS 사용법 2. 내부 스타일 시트</h3>
+    <p>HTML 문서 안에 &lt;style&gt; 태그로 선언하는 방법</p>
+    <style>
+        #id1 {
+            background-color: coral;
+            color: aquamarine;
+        }
+    </style>
+    <div id="id1">id1을 통해 css 내부스타일 지정되는 영역</div>
+    <div id="id2">id1을 통해 css 내부스타일 지정이 안되는 영역!</div>
+    <hr><br>
+
+    <h3>CSS 사용법 3. 외부 스타일 시트 - 표준적인 방법(네이버/다음/구글 등 모두 사용)</h3>
+    <p> - 별도의 css 확장자 파일을 import 하여 사용하는 방법</p>
+    <p> - head에 link 태그를 사용하여 반드시 참조 여부를 선언해야 가능</p>
+    <!-- <link rel="stylesheet" type="text/css" href="00_css00.css"> -->
+    <div id="id3">외부 스타일 지정 영역</div>
+    <hr><br>
+
+    <h3>CSS 적용 우선순위 (적용 범위가 가까울수록 높음)</h3>
+    <div>1. 인라인스타일</div>
+    <div>2. 내부스타일시트 == 외부 스타일 시트와 같음, 단 마지막에 선언한 값이 적용된다.</div>
+    <div>3. 브라우저 기본 값</div>
+    <hr><br>
+
+    <h3>CSS 적용 문법</h3>
+    <!-- #id1 {
+        background-color: coral;
+        color: aquamarine;
+    } -->
+    <div> Selector {Property : value; ... N} </div>
+    <div> Selector(선택자) : 스타일을 지정할 태그, ID, Class 등을 지정하는 선택자 ex) p, #id1, .class1</div>
+    <div> Property(속성) : 스타일에 적용할 속성, ex) color, font-size, background-color .. </div>
+    <div> value(값) : 스탈에 적용할 실제 값, ex) 10px, red, blue, 100% </div>
+
+    <br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
