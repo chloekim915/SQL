@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>선택자우선순위</title>
+    <meta charset="UTF-8">
+    <style>
+        #test2,
+        #test3 {
+            background-color: yellow;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        
+        .test {
+            background-color: purple;
+        }
+        
+        p {
+            background-color: red;
+        }
+        
+        p {
+            background-color: violet !important;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>선택자 우선 순위</h1>
+    <p>
+        기본적으로 CSS속성은 위에서부터 아래로 적용<br> 같은 태그(요소)에 여러 CSS속성이 설정된 경우 우선순위에 따라 적용됨
+    </p>
+    <p>
+        1. !important 설정된 속성
+        <br> 2. 인라인 스타일
+        <br> 3. 아이디 선택자
+        <br> 4. 클래스 선택자
+        <br> 5. 태그 선택자
+    </p>
+    <hr>
+    <h2>선택자 우선순위 테스트</h2>
+    <div id="test1" class="test">우선순위 테스트1</div>
+    <div id="test2" class="test" style="background-color: yellowgreen;">우선순위 테스트2</div>
+    <p id="test3" class="test">우선순위 테스트3</p>
+    <p id="test4" class="test">우선순위 테스트4</p>
+</body>
+
+</html>
